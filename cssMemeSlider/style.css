@@ -17,7 +17,7 @@
   }
 
 .wrapper {
-  background: black;
+  background: yellow;
 }
 
 .container {
@@ -30,11 +30,18 @@
   gap: 2rem;
   padding-top: 1rem;
   overflow-y: hidden;
+  background: black;
 }
 /*-------images---------*/
+.images-container {
+  max-width: 89%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
 .images {
   display: flex;
-  overflow: hidden;
+  transition: 0.5s;
 }
 .images-item {
   min-width: 100%;
@@ -45,10 +52,12 @@
 .images-bottom {
   display: flex;
   flex-direction: row-reverse;
+  max-width: 89%;
 }
-/////////////////////////////////////////////////////////
+
 .controls {
   display: flex;
+  
 }
 
 .controls-labels {
@@ -61,6 +70,22 @@
 .controls-inputs {
   display: none;
 }
+
+.controls:has(#1:checked) ~ .images-container .images,
+.controls:has(#1:checked) ~ .captions { transform: translateX(0);}
+.controls:has(#2:checked) ~ .images-container .images,
+.controls:has(#2:checked) ~ .captions { transform: translateX(-100%);}
+.controls:has(#3:checked) ~ .images-container .images,
+.controls:has(#3:checked) ~ .captions { transform: translateX(-200%);}
+.controls:has(#4:checked) ~ .images-container .images,
+.controls:has(#4:checked) ~ .captions { transform: translateX(-300%);}
+.controls:has(#5:checked) ~ .images-container .images,
+.controls:has(#5:checked) ~ .captions { transform: translateX(-400%);}
+.controls:has(#6:checked) ~ .images-container .images,
+.controls:has(#6:checked) ~ .captions { transform: translateX(-500%);}
+
+
+
 .controls-circle {
   width: 1rem;
   height: 1rem;
@@ -72,35 +97,30 @@
 }
 
 .controls-labels:hover > .controls-circle {
-  background: #FEFEFE;
-  border: 0.2rem solid #FEFEFE;
+  background: white;
+  border: 0.2rem solid white;
 }
 .controls-labels:active > .controls-circle {
-  background: #BCBDBE;
-  border: 0.2rem solid #BCBDBE;
+  background: red;
+  border: 0.2rem solid red;
 }
 .controls-labels:has(.controls-inputs:checked) > .controls-circle {
-  background-color: transparent;
+  background: transparent;
 }
 
-//////////////////////////////////////////////////////////
+/*//////////////////////////////////////////////////////////*/
 .captions {
-  /* flex:1; */
+  flex:1; 
   display: flex;
   overflow: hidden;
-  max-width: 60%;
 }
 
 .captions-title {
   display: flex;
-  transition: 0.6s;
+  transition: 0.5s;
+  min-width:100%;
 }
 
-.caption-container__text {
-  margin: 1rem 0.5rem;
-  letter-spacing: 0.2rem;
-  min-width: 100%;
-}
 /*------images-bottom------*/
 
 
