@@ -71,18 +71,18 @@
   display: none;
 }
 
-.controls:has(#1:checked) ~ .images-container .images,
-.controls:has(#1:checked) ~ .captions { transform: translateX(0);}
-.controls:has(#2:checked) ~ .images-container .images,
-.controls:has(#2:checked) ~ .captions { transform: translateX(-100%);}
-.controls:has(#3:checked) ~ .images-container .images,
-.controls:has(#3:checked) ~ .captions { transform: translateX(-200%);}
-.controls:has(#4:checked) ~ .images-container .images,
-.controls:has(#4:checked) ~ .captions { transform: translateX(-300%);}
-.controls:has(#5:checked) ~ .images-container .images,
-.controls:has(#5:checked) ~ .captions { transform: translateX(-400%);}
-.controls:has(#6:checked) ~ .images-container .images,
-.controls:has(#6:checked) ~ .captions { transform: translateX(-500%);}
+.images-bottom .controls:has(#i-1:checked) ~ .images-container .images,
+.controls:has(#i-1:checked) ~ .captions { transform: translateX(0);}
+.images-bottom .controls:has(#i-2:checked) ~ .images-container .images,
+.controls:has(#i-2:checked) ~ .captions { transform: translateX(-100%);}
+.images-bottom .controls:has(#i-3:checked) ~ .images-container .images,
+.controls:has(#i-3:checked) ~ .captions { transform: translateX(-200%);}
+.images-bottom .controls:has(#i-4:checked) ~ .images-container .images,
+.controls:has(#i-4:checked) ~ .captions { transform: translateX(-300%);}
+.images-bottom .controls:has(#i-5:checked) ~ .images-container .images,
+.controls:has(#i-5:checked) ~ .captions { transform: translateX(-400%);}
+.images-bottom .controls:has(#i-6:checked) ~ .images-container .images,
+.controls:has(#i-6:checked) ~ .captions { transform: translateX(-500%);}
 
 
 
