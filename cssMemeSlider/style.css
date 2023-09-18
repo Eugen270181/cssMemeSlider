@@ -20,7 +20,7 @@
 body {
   display: flex;
   flex-direction: column;
-  max-width: 90%;
+  max-width: 85%;
   margin: 0 auto;
   background: black;
 }
