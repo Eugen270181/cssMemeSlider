@@ -16,25 +16,26 @@
   outline:1px solid red;
   }
 
-.wrapper {
-  background: yellow;
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 95%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: black;
 }
 
 .container {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  max-width: 90%;
-  min-height: 100vh;
-  margin: 0 auto;
+  justify-content: flex-end; 
   gap: 2rem;
   padding-top: 1rem;
   overflow-y: hidden;
-  background: black;
 }
 /*-------images---------*/
-.images-container {
-  max-width: 89%;
+.images-overflow {
   overflow: hidden;
   border-radius: 0.5rem;
 }
@@ -43,8 +44,10 @@
   display: flex;
   transition: 0.5s;
 }
+
 .images-item {
-  min-width: 100%;
+  border-radius: 0.5rem;
+  width: 100%;
 }
 
 /*-------images---------*/
@@ -52,41 +55,31 @@
 .images-bottom {
   display: flex;
   flex-direction: row-reverse;
-  max-width: 89%;
+  align-self: stretch;
+  /* max-width: 89%; */
 }
 
 .controls {
   display: flex;
-  
-}
-
-.controls-labels {
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  padding: 0.5rem;
 }
 
 .controls-inputs {
   display: none;
 }
 
-.images-bottom .controls:has(#i-1:checked) ~ .images-container .images,
-.controls:has(#i-1:checked) ~ .captions { transform: translateX(0);}
-.images-bottom .controls:has(#i-2:checked) ~ .images-container .images,
-.controls:has(#i-2:checked) ~ .captions { transform: translateX(-100%);}
-.images-bottom .controls:has(#i-3:checked) ~ .images-container .images,
-.controls:has(#i-3:checked) ~ .captions { transform: translateX(-200%);}
-.images-bottom .controls:has(#i-4:checked) ~ .images-container .images,
-.controls:has(#i-4:checked) ~ .captions { transform: translateX(-300%);}
-.images-bottom .controls:has(#i-5:checked) ~ .images-container .images,
-.controls:has(#i-5:checked) ~ .captions { transform: translateX(-400%);}
-.images-bottom .controls:has(#i-6:checked) ~ .images-container .images,
-.controls:has(#i-6:checked) ~ .captions { transform: translateX(-500%);}
-
-
+.controls-labels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
 
 .controls-circle {
+  display:block;
+  box-sizing: content-box;
   width: 1rem;
   height: 1rem;
   background: blue;
@@ -97,22 +90,40 @@
 }
 
 .controls-labels:hover > .controls-circle {
-  background: white;
-  border: 0.2rem solid white;
+  background: yellow;
+  border: 0.2rem solid yellow;
 }
 .controls-labels:active > .controls-circle {
-  background: red;
+  background: yellow;
   border: 0.2rem solid red;
 }
 .controls-labels:has(.controls-inputs:checked) > .controls-circle {
-  background: transparent;
+  background: blue;
+  border: 0.2rem solid yellow;
 }
 
-/*//////////////////////////////////////////////////////////*/
-.captions {
+
+.images-bottom:has(#i-1:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-1:checked) ~ .captions-overflow .captions { transform: translateX(0);}
+.images-bottom:has(#i-2:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-2:checked) ~ .captions-overflow .captions { transform: translateX(-100%);}
+.images-bottom:has(#i-3:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-3:checked) ~ .captions-overflow .captions { transform: translateX(-200%);}
+.images-bottom:has(#i-4:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-4:checked) ~ .captions-overflow .captions { transform: translateX(-300%);}
+.images-bottom:has(#i-5:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-5:checked) ~ .captions-overflow .captions { transform: translateX(-400%);}
+.images-bottom:has(#i-6:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-6:checked) ~ .captions-overflow .captions { transform: translateX(-500%);}
+
+.captions-overflow {
   flex:1; 
-  display: flex;
   overflow: hidden;
+}
+
+.captions {
+  display: flex;
+  transition: 0.5s;
 }
 
 .captions-title {
@@ -120,19 +131,9 @@
   transition: 0.5s;
   min-width:100%;
 }
-
-/*------images-bottom------*/
-
-
-
-
 /*------------------------1024px-------------------------------------*/
 @media (max-width: 1024px) {
-  .images {
-    width: 100%;
-  }
   .images-bottom {
-    width:100%;
     flex-direction: column;
   }
   
